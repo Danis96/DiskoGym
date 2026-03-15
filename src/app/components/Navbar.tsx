@@ -33,6 +33,7 @@ export function Navbar() {
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Facilities", href: "#facilities" },
+    { name: "Group Training", href: "#group-training" },
     { name: "Membership", href: "#membership" },
     { name: "Gallery", href: "#gallery" },
     { name: "Contact", href: "#contact" },
