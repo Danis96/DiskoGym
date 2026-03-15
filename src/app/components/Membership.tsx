@@ -46,45 +46,47 @@ export function Membership() {
   ];
 
   return (
-    <section ref={ref} className="py-24 px-4 bg-black relative overflow-hidden">
+    <section ref={ref} className="relative overflow-hidden bg-black px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
       {/* Background Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#D4A840]/10 rounded-full blur-3xl" />
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="relative mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="mb-12 text-center sm:mb-16"
         >
           <h2
-            className="text-6xl md:text-7xl font-bold mb-6 text-white"
+            className="mb-4 text-4xl font-bold text-white sm:mb-6 sm:text-5xl md:text-6xl lg:text-7xl"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
             Membership <span className="neon-text">Plans</span>
           </h2>
           <p
-            className="text-xl text-gray-400 max-w-2xl mx-auto"
+            className="mx-auto max-w-2xl text-base text-gray-400 sm:text-lg md:text-xl"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Choose the perfect plan for your fitness journey
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 md:gap-7 xl:grid-cols-3 xl:gap-8">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className={`relative glass-card rounded-2xl p-8 ${
-                plan.popular ? "md:-translate-y-2 neon-border" : ""
+              className={`relative glass-card rounded-2xl p-6 sm:p-8 ${
+                plan.popular
+                  ? "neon-border md:col-span-2 xl:col-span-1 xl:-translate-y-2"
+                  : ""
               } interactive-surface`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-[#D4A840] to-[#B8922E] text-black px-6 py-2 rounded-full text-sm font-semibold">
+                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
+                  <span className="rounded-full bg-gradient-to-r from-[#D4A840] to-[#B8922E] px-5 py-2 text-xs font-semibold tracking-[0.18em] text-black sm:px-6 sm:text-sm">
                     MOST POPULAR
                   </span>
                 </div>
@@ -92,32 +94,32 @@ export function Membership() {
 
               <div className="text-center mb-8">
                 <h3
-                  className="text-3xl font-bold text-white mb-4"
+                  className="mb-4 text-2xl font-bold text-white sm:text-3xl"
                   style={{ fontFamily: "'Oswald', sans-serif" }}
                 >
                   {plan.name}
                 </h3>
                 <div className="flex items-baseline justify-center gap-2">
                   <span
-                    className={`text-6xl font-bold ${
+                    className={`text-5xl font-bold sm:text-6xl ${
                       plan.popular ? "neon-text" : "text-white"
                     }`}
                     style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                   >
                     {plan.price}
                   </span>
-                  <span className="text-gray-400 text-xl">KM/month</span>
+                  <span className="text-lg text-gray-400 sm:text-xl">KM/month</span>
                 </div>
               </div>
 
-              <ul className="space-y-4 mb-8">
+              <ul className="mb-8 space-y-3 sm:space-y-4">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <Check
                       className={`w-5 h-5 mt-0.5 flex-shrink-0 text-[#D4A840]`}
                     />
                     <span
-                      className="text-gray-300"
+                      className="text-sm text-gray-300 sm:text-base"
                       style={{ fontFamily: "'Inter', sans-serif" }}
                     >
                       {feature}
