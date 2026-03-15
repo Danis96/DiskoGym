@@ -83,8 +83,14 @@ export function Membership() {
               } interactive-surface`}
             >
               {plan.popular && (
-                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
-                  <span className="rounded-full bg-gradient-to-r from-[#D4A840] to-[#B8922E] px-5 py-2 text-xs font-semibold tracking-[0.18em] text-black sm:px-6 sm:text-sm">
+                <div className="absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1/2">
+                  <span
+                    className="relative inline-flex items-center justify-center bg-gradient-to-r from-[#D4A840] to-[#B8922E] px-5 py-2 text-[0.7rem] font-semibold tracking-[0.24em] text-black sm:px-6 sm:py-2.5 sm:text-xs"
+                    style={{
+                      clipPath:
+                        "polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%)",
+                    }}
+                  >
                     MOST POPULAR
                   </span>
                 </div>

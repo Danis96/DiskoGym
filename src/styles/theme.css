@@ -301,6 +301,181 @@
   pointer-events: none;
 }
 
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(212, 168, 64, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 168, 64, 0.08) 1px, transparent 1px);
+  background-size: 4.75rem 4.75rem;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), transparent 85%);
+}
+
+.hero-beam {
+  background: radial-gradient(circle, rgba(212, 168, 64, 0.22) 0%, rgba(212, 168, 64, 0.08) 35%, transparent 72%);
+  filter: blur(20px);
+  opacity: 0.9;
+  animation: heroBeamDrift 10s ease-in-out infinite;
+}
+
+.hero-beam-right {
+  animation-delay: -4s;
+}
+
+.hero-power-ring {
+  box-shadow:
+    0 0 0 1px rgba(212, 168, 64, 0.05),
+    0 0 36px rgba(212, 168, 64, 0.12),
+    inset 0 0 32px rgba(212, 168, 64, 0.08);
+  animation: heroRingPulse 5.5s ease-in-out infinite;
+}
+
+.hero-power-ring-delayed {
+  animation-delay: -2.4s;
+}
+
+.hero-strike {
+  background: linear-gradient(90deg, transparent, rgba(212, 168, 64, 0.7), transparent);
+  box-shadow: 0 0 16px rgba(212, 168, 64, 0.35);
+  animation: heroStrikeSweep 7s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+.hero-stat-stack {
+  box-shadow:
+    0 0 0 1px rgba(212, 168, 64, 0.06),
+    0 25px 80px rgba(0, 0, 0, 0.5);
+}
+
+.hero-lift-track {
+  background: linear-gradient(180deg, rgba(212, 168, 64, 0.35), rgba(212, 168, 64, 0.04) 80%, transparent);
+  box-shadow: 0 0 18px rgba(212, 168, 64, 0.18);
+  opacity: 0.75;
+}
+
+.hero-barbell {
+  animation: heroBarbellLift 4.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  transform-origin: center;
+}
+
+.hero-bar {
+  width: 11.5rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.82), rgba(212,168,64,0.95), rgba(255,255,255,0.82));
+  box-shadow:
+    0 0 16px rgba(212, 168, 64, 0.35),
+    inset 0 0 8px rgba(0, 0, 0, 0.35);
+}
+
+.hero-plate {
+  border-radius: 999px;
+  border: 2px solid rgba(212, 168, 64, 0.45);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent 36%),
+    radial-gradient(circle, rgba(212, 168, 64, 0.24) 0%, rgba(212, 168, 64, 0.08) 48%, rgba(0, 0, 0, 0.58) 100%);
+  box-shadow:
+    0 0 18px rgba(212, 168, 64, 0.2),
+    inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-plate-inner {
+  width: 1rem;
+  height: 3.1rem;
+  margin: 0 0.32rem;
+}
+
+.hero-plate-outer {
+  width: 1.35rem;
+  height: 4.1rem;
+}
+
+.hero-stat-chip {
+  animation: heroCardFloat 5.8s ease-in-out infinite;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.hero-stat-chip-bottom {
+  animation-delay: -2.6s;
+}
+
+@keyframes heroBeamDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.72;
+  }
+  50% {
+    transform: translate3d(1.5rem, -1rem, 0) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes heroRingPulse {
+  0%, 100% {
+    transform: scale(0.96);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.8;
+  }
+}
+
+@keyframes heroStrikeSweep {
+  0%, 100% {
+    transform: translateX(-30%) scaleX(0.9);
+    opacity: 0;
+  }
+  15%, 75% {
+    opacity: 0.62;
+  }
+  50% {
+    transform: translateX(30%) scaleX(1.1);
+    opacity: 0.82;
+  }
+}
+
+@keyframes heroCardFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes heroCardPulse {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+    box-shadow:
+      0 0 0 1px rgba(212, 168, 64, 0.08),
+      0 0 18px rgba(212, 168, 64, 0.12);
+  }
+  50% {
+    transform: translate3d(0, -4px, 0);
+    box-shadow:
+      0 0 0 1px rgba(212, 168, 64, 0.16),
+      0 0 28px rgba(212, 168, 64, 0.18);
+  }
+}
+
+@keyframes heroBarbellLift {
+  0%, 100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  18% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  46% {
+    transform: translate3d(-50%, 4.75rem, 0);
+  }
+  62% {
+    transform: translate3d(-50%, -0.35rem, 0);
+  }
+  78% {
+    transform: translate3d(-50%, 1rem, 0);
+  }
+}
+
 .interactive-surface {
   transition:
     transform 240ms ease,
@@ -342,11 +517,44 @@ body {
     opacity: 0.7;
   }
 
+  .hero-grid {
+    background-size: 3.6rem 3.6rem;
+  }
+
+  .hero-stat-stack {
+    padding-top: 0.25rem;
+  }
+
+  .hero-bar {
+    width: 8.25rem;
+  }
+
+  .hero-plate-inner {
+    width: 0.8rem;
+    height: 2.55rem;
+    margin: 0 0.24rem;
+  }
+
+  .hero-plate-outer {
+    width: 1.05rem;
+    height: 3.3rem;
+  }
+
   .neon-text {
     text-shadow:
       0 0 8px rgba(212, 168, 64, 0.8),
       0 0 18px rgba(212, 168, 64, 0.45),
       0 0 28px rgba(212, 168, 64, 0.2);
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-stat-chip {
+    animation: heroCardPulse 4.4s ease-in-out infinite;
+  }
+
+  .hero-stat-chip-bottom {
+    animation-delay: -2.1s;
   }
 }
 
@@ -362,6 +570,14 @@ body {
   }
 
   .neon-text {
+    animation: none;
+  }
+
+  .hero-beam,
+  .hero-power-ring,
+  .hero-strike,
+  .hero-stat-chip,
+  .hero-barbell {
     animation: none;
   }
 }
