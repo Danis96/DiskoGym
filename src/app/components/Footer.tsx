@@ -1,4 +1,10 @@
-import { MapPin, Phone, Clock, Instagram, Facebook, Mail } from "lucide-react";
+import { MapPin, Phone, Clock, Instagram, Facebook, Mail, Map, BadgeCheck } from "lucide-react";
+
+const googleMapsUrl =
+  "https://www.google.com/maps/place/Fitness+Centar+Disko+Gym/@43.8508723,18.3604341,806m/data=!3m1!1e3!4m6!3m5!1s0x4758c9a8c9da963d:0x684a6c97e78b5b6e!8m2!3d43.8508723!4d18.363009!16s%2Fg%2F11fhvn3ttk?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D";
+const instagramUrl = "https://www.instagram.com/diskogym/";
+const facebookUrl = "https://www.facebook.com/FitnessDiskoGym/";
+const fitpassUrl = "https://fitpass.ba/en/objects/fitness-centar-diskogym";
 
 export function Footer() {
   return (
@@ -31,12 +37,17 @@ export function Footer() {
               Contact
             </h4>
             <div className="space-y-3">
-              <div className="flex items-start gap-2 text-gray-400">
+              <a
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-start gap-2 text-gray-400 transition-colors duration-300 hover:text-white"
+              >
                 <MapPin className="w-5 h-5 text-[#D4A840] flex-shrink-0 mt-0.5" />
                 <span style={{ fontFamily: "'Inter', sans-serif" }}>
                   Džemala Bijedića 138, Sarajevo
                 </span>
-              </div>
+              </a>
               <div className="flex items-center gap-2 text-gray-400">
                 <Phone className="w-5 h-5 text-[#D4A840]" />
                 <span style={{ fontFamily: "'Inter', sans-serif" }}>
@@ -77,18 +88,42 @@ export function Footer() {
             >
               Follow Us
             </h4>
-            <div className="flex gap-3 sm:gap-4">
+            <div className="flex flex-wrap gap-3 sm:gap-4">
               <a
-                href="#"
+                href={instagramUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open Disko Gym Instagram"
                 className="interactive-surface glass-card flex h-11 w-11 items-center justify-center rounded-lg text-gray-400 transition-all duration-300 hover:text-[#D4A840] sm:h-12 sm:w-12"
               >
                 <Instagram className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href={facebookUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open Disko Gym Facebook"
                 className="interactive-surface glass-card flex h-11 w-11 items-center justify-center rounded-lg text-gray-400 transition-all duration-300 hover:text-[#D4A840] sm:h-12 sm:w-12"
               >
                 <Facebook className="w-6 h-6" />
+              </a>
+              <a
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open Disko Gym on Google Maps"
+                className="interactive-surface glass-card flex h-11 w-11 items-center justify-center rounded-lg text-gray-400 transition-all duration-300 hover:text-[#D4A840] sm:h-12 sm:w-12"
+              >
+                <Map className="w-6 h-6" />
+              </a>
+              <a
+                href={fitpassUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open Disko Gym on FitPass"
+                className="interactive-surface glass-card flex h-11 w-11 items-center justify-center rounded-lg text-gray-400 transition-all duration-300 hover:text-[#D4A840] sm:h-12 sm:w-12"
+              >
+                <BadgeCheck className="w-6 h-6" />
               </a>
             </div>
           </div>
