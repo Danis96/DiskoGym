@@ -2,13 +2,13 @@ import { MapPin, Phone, Clock, Instagram, Facebook, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-zinc-950 border-t border-[#D4A840]/20 py-16 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+    <footer className="border-t border-[#D4A840]/20 bg-zinc-950 px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-10 grid gap-10 sm:grid-cols-2 lg:mb-12 lg:grid-cols-4 lg:gap-12">
           {/* Brand */}
           <div>
             <h3
-              className="text-4xl font-bold mb-4"
+              className="mb-4 text-3xl font-bold sm:text-4xl"
               style={{ fontFamily: "'Bebas Neue', sans-serif" }}
             >
               <span className="neon-text">Disko</span>
@@ -77,16 +77,16 @@ export function Footer() {
             >
               Follow Us
             </h4>
-            <div className="flex gap-4">
+            <div className="flex gap-3 sm:gap-4">
               <a
                 href="#"
-                className="interactive-surface w-12 h-12 rounded-lg glass-card flex items-center justify-center text-gray-400 hover:text-[#D4A840] transition-all duration-300"
+                className="interactive-surface glass-card flex h-11 w-11 items-center justify-center rounded-lg text-gray-400 transition-all duration-300 hover:text-[#D4A840] sm:h-12 sm:w-12"
               >
                 <Instagram className="w-6 h-6" />
               </a>
               <a
                 href="#"
-                className="interactive-surface w-12 h-12 rounded-lg glass-card flex items-center justify-center text-gray-400 hover:text-[#D4A840] transition-all duration-300"
+                className="interactive-surface glass-card flex h-11 w-11 items-center justify-center rounded-lg text-gray-400 transition-all duration-300 hover:text-[#D4A840] sm:h-12 sm:w-12"
               >
                 <Facebook className="w-6 h-6" />
               </a>
@@ -95,7 +95,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-gray-800 text-center">
+        <div className="border-t border-gray-800 pt-8 text-center">
           <p
             className="text-gray-500"
             style={{ fontFamily: "'Inter', sans-serif" }}

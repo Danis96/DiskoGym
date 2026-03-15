@@ -26,41 +26,41 @@ export function Trainers() {
   ];
 
   return (
-    <section ref={ref} className="py-24 px-4 bg-black relative overflow-hidden">
+    <section ref={ref} className="relative overflow-hidden bg-black px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
       {/* Background Effects */}
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-[#D4A840]/10 rounded-full blur-3xl" />
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="relative mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="mb-12 text-center sm:mb-16"
         >
           <h2
-            className="text-6xl md:text-7xl font-bold mb-6 text-white"
+            className="mb-4 text-4xl font-bold text-white sm:mb-6 sm:text-5xl md:text-6xl lg:text-7xl"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
             Meet Our <span className="neon-text">Trainers</span>
           </h2>
           <p
-            className="text-xl text-gray-400 max-w-2xl mx-auto"
+            className="mx-auto max-w-2xl text-base text-gray-400 sm:text-lg md:text-xl"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Expert coaches dedicated to your fitness goals
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-8">
           {trainers.map((trainer, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="group"
+              className={`group ${index === 2 ? "md:col-span-2 xl:col-span-1" : ""}`}
             >
-              <div className="relative overflow-hidden rounded-2xl aspect-[3/4] mb-6">
+              <div className="relative mb-5 aspect-[4/5] overflow-hidden rounded-2xl sm:mb-6 md:aspect-[3/4]">
                 <img
                   src={trainer.image}
                   alt={trainer.name}
@@ -73,7 +73,7 @@ export function Trainers() {
                 {/* Quote overlay on hover */}
                 <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
                   <p
-                    className="text-2xl text-center italic text-white"
+                    className="text-xl text-center italic text-white sm:text-2xl"
                     style={{ fontFamily: "'Oswald', sans-serif" }}
                   >
                     "{trainer.quote}"
@@ -86,7 +86,7 @@ export function Trainers() {
 
               <div className="text-center">
                 <h3
-                  className="text-2xl font-bold text-white mb-2"
+                  className="mb-2 text-xl font-bold text-white sm:text-2xl"
                   style={{ fontFamily: "'Oswald', sans-serif" }}
                 >
                   {trainer.name}

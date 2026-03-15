@@ -3,7 +3,7 @@ import { MapPin, Clock } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative min-h-[100svh] w-full overflow-hidden">
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0">
         <img
@@ -21,14 +21,14 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative h-full flex items-center justify-center px-4">
-        <div className="max-w-5xl mx-auto text-center">
+        <div className="mx-auto max-w-5xl pt-24 pb-16 text-center sm:pt-28 sm:pb-20 lg:pt-24 lg:pb-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <h1
-              className="text-7xl md:text-8xl lg:text-9xl font-bold mb-6 tracking-tight"
+              className="mb-4 text-5xl font-bold tracking-tight sm:mb-6 sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
               style={{ fontFamily: "'Bebas Neue', sans-serif" }}
             >
               <span className="text-white">Train Hard.</span>
@@ -43,7 +43,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto"
+            className="mx-auto mb-10 max-w-3xl px-2 text-base leading-relaxed text-gray-300 sm:mb-12 sm:text-lg md:text-xl lg:text-2xl"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Modern fitness center in Sarajevo with professional equipment and expert trainers.
@@ -53,17 +53,17 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
+            className="mb-12 flex flex-col justify-center gap-4 sm:mb-14 sm:flex-row sm:gap-5 md:mb-16"
           >
             <a
               href="#membership"
-              className="neon-button px-10 py-5 text-lg font-semibold rounded-lg transition-all duration-300"
+              className="neon-button rounded-lg px-8 py-4 text-base font-semibold transition-all duration-300 sm:px-10 sm:py-5 sm:text-lg"
             >
               Join Now
             </a>
             <a
               href="#membership"
-              className="glass-button px-10 py-5 text-lg font-semibold rounded-lg transition-all duration-300"
+              className="glass-button rounded-lg px-8 py-4 text-base font-semibold transition-all duration-300 sm:px-10 sm:py-5 sm:text-lg"
             >
               View Membership
             </a>
@@ -73,17 +73,17 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-8 justify-center items-center text-gray-300"
+            className="flex flex-col items-center justify-center gap-4 text-sm text-gray-300 sm:flex-row sm:gap-6 sm:text-base md:gap-8"
           >
-            <div className="flex items-center gap-2">
-              <MapPin className="w-5 h-5 text-[#D4A840]" />
-              <span style={{ fontFamily: "'Inter', sans-serif" }}>
+            <div className="flex items-center justify-center gap-2 text-center sm:text-left">
+              <MapPin className="h-5 w-5 flex-shrink-0 text-[#D4A840]" />
+              <span className="leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
                 Džemala Bijedića 138, Sarajevo
               </span>
             </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5 text-[#D4A840]" />
-              <span style={{ fontFamily: "'Inter', sans-serif" }}>
+            <div className="flex items-center justify-center gap-2 text-center sm:text-left">
+              <Clock className="h-5 w-5 flex-shrink-0 text-[#D4A840]" />
+              <span className="leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
                 Open daily 09:00 – 24:00
               </span>
             </div>
@@ -96,7 +96,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-5 left-1/2 hidden -translate-x-1/2 sm:block"
       >
         <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
           <motion.div

@@ -39,34 +39,34 @@ export function Gallery() {
   ];
 
   return (
-    <section ref={ref} className="py-24 px-4 bg-zinc-950 relative overflow-hidden">
+    <section ref={ref} className="relative overflow-hidden bg-zinc-950 px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
       {/* Background Effects */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-[#D4A840]/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#D4A840]/5 rounded-full blur-3xl" />
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="relative mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="mb-12 text-center sm:mb-16"
         >
           <h2
-            className="text-6xl md:text-7xl font-bold mb-6 text-white"
+            className="mb-4 text-4xl font-bold text-white sm:mb-6 sm:text-5xl md:text-6xl lg:text-7xl"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
             Gym <span className="neon-text">Gallery</span>
           </h2>
           <p
-            className="text-xl text-gray-400 max-w-2xl mx-auto"
+            className="mx-auto max-w-2xl text-base text-gray-400 sm:text-lg md:text-xl"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Experience the energy and atmosphere of Disko Gym
           </p>
         </motion.div>
 
-        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}>
-          <Masonry gutter="1rem">
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 640: 2, 960: 2, 1180: 3 }}>
+          <Masonry gutter="clamp(0.75rem, 2vw, 1rem)">
             {images.map((image, index) => (
               <motion.div
                 key={index}
@@ -87,7 +87,7 @@ export function Gallery() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <h3
-                      className="text-2xl font-bold text-white"
+                    className="text-xl font-bold text-white sm:text-2xl"
                       style={{ fontFamily: "'Oswald', sans-serif" }}
                     >
                       {image.title}

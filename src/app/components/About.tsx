@@ -24,12 +24,12 @@ export function About() {
   ];
 
   return (
-    <section ref={ref} className="py-24 px-4 bg-black relative overflow-hidden">
+    <section ref={ref} className="relative overflow-hidden bg-black px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
       {/* Background Effects */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#D4A840]/10 rounded-full blur-3xl" />
       
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
           {/* Image Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -56,14 +56,14 @@ export function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2
-              className="text-5xl md:text-6xl font-bold mb-6 text-white"
+              className="mb-5 text-4xl font-bold text-white sm:text-5xl md:text-6xl"
               style={{ fontFamily: "'Bebas Neue', sans-serif" }}
             >
               About <span className="neon-text">Disko Gym</span>
             </h2>
             
             <p
-              className="text-lg text-gray-300 mb-10 leading-relaxed"
+              className="mb-8 text-base leading-relaxed text-gray-300 sm:text-lg sm:leading-8 md:mb-10"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Disko Gym offers a modern training environment with professional equipment, 
@@ -71,14 +71,14 @@ export function About() {
               professional athlete, the gym provides everything needed for effective training.
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-5 md:space-y-6">
               {highlights.map((item, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                  className="glass-card interactive-surface p-6 rounded-xl flex items-start gap-4 group"
+                  className="glass-card interactive-surface flex items-start gap-4 rounded-xl p-5 group sm:p-6"
                 >
                   <div className="text-[#D4A840] group-hover:text-[#B8922E] transition-colors duration-300">
                     {item.icon}
