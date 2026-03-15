@@ -1,6 +1,7 @@
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { Facilities } from "./components/Facilities";
+import { GroupTraining } from "./components/GroupTraining";
 import { Membership } from "./components/Membership";
 import { Gallery } from "./components/Gallery";
 import { Trainers } from "./components/Trainers";
@@ -21,6 +22,9 @@ export default function App() {
       </div>
       <div id="facilities">
         <Facilities />
+      </div>
+      <div id="group-training">
+        <GroupTraining />
       </div>
       <div id="membership">
         <Membership />
