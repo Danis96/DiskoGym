@@ -2,6 +2,10 @@ import { motion } from "motion/react";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { useInView } from "./hooks/useInView";
 
+const googleMapsUrl =
+  "https://www.google.com/maps/place/Fitness+Centar+Disko+Gym/@43.8508723,18.3604341,806m/data=!3m1!1e3!4m6!3m5!1s0x4758c9a8c9da963d:0x684a6c97e78b5b6e!8m2!3d43.8508723!4d18.363009!16s%2Fg%2F11fhvn3ttk?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D";
+const fitpassUrl = "https://fitpass.ba/en/objects/fitness-centar-diskogym";
+
 export function Map() {
   const { ref, inView } = useInView();
 
@@ -70,14 +74,17 @@ export function Map() {
                   >
                     Address
                   </h3>
-                  <p
+                  <a
+                    href={googleMapsUrl}
+                    target="_blank"
+                    rel="noreferrer"
                     className="text-base text-gray-300 sm:text-lg"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     Džemala Bijedića 138
                     <br />
                     Sarajevo, Bosnia and Herzegovina
-                  </p>
+                  </a>
                 </div>
               </div>
             </div>
@@ -128,6 +135,27 @@ export function Map() {
                   </p>
                 </div>
               </div>
+            </div>
+
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <a
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="neon-button rounded-lg px-6 py-4 text-center text-sm font-semibold sm:text-base"
+                style={{ fontFamily: "'Oswald', sans-serif" }}
+              >
+                Open in Google Maps
+              </a>
+              <a
+                href={fitpassUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="glass-button rounded-lg px-6 py-4 text-center text-sm font-semibold sm:text-base"
+                style={{ fontFamily: "'Oswald', sans-serif" }}
+              >
+                View on FitPass
+              </a>
             </div>
           </motion.div>
         </div>

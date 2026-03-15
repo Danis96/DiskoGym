@@ -40,7 +40,7 @@ export function CTA() {
             className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-gray-300 sm:mb-12 sm:text-lg md:text-xl lg:text-2xl"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Join Disko Gym and become the strongest version of yourself
+            Start with a free training session at Disko Gym and become the strongest version of yourself
           </p>
 
           <motion.button
@@ -50,7 +50,7 @@ export function CTA() {
             className="neon-button rounded-lg px-8 py-4 text-lg font-bold transition-all duration-300 sm:px-12 sm:py-5 sm:text-xl lg:px-16 lg:py-6 lg:text-2xl"
             style={{ fontFamily: "'Oswald', sans-serif" }}
           >
-            Join Disko Gym
+            Claim Free Training
           </motion.button>
         </motion.div>
       </div>

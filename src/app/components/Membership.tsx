@@ -71,7 +71,7 @@ export function Membership() {
           </p>
         </motion.div>
 
-        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 md:gap-7 xl:grid-cols-3 xl:gap-8">
+        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2 lg:gap-7 xl:grid-cols-3 xl:gap-8">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
@@ -79,9 +79,7 @@ export function Membership() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className={`relative glass-card rounded-2xl p-6 sm:p-8 ${
-                plan.popular
-                  ? "neon-border md:col-span-2 xl:col-span-1 xl:-translate-y-2"
-                  : ""
+                plan.popular ? "neon-border lg:col-span-2 xl:col-span-1 xl:-translate-y-2" : ""
               } interactive-surface`}
             >
               {plan.popular && (

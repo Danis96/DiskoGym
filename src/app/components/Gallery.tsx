@@ -74,15 +74,14 @@ export function Gallery() {
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative group overflow-hidden rounded-xl cursor-pointer"
-                style={{ contentVisibility: "auto" }}
+                style={{ aspectRatio: image.aspectRatio, contentVisibility: "auto" }}
               >
                 <img
                   src={image.url}
                   alt={image.title}
-                  className="media-zoom w-full h-auto"
+                  className="media-zoom h-full w-full object-cover"
                   loading="lazy"
                   decoding="async"
-                  style={{ aspectRatio: image.aspectRatio }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-6">
