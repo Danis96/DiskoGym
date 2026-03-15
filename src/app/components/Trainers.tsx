@@ -1,0 +1,107 @@
+import { motion } from "motion/react";
+import { useInView } from "./hooks/useInView";
+
+export function Trainers() {
+  const { ref, inView } = useInView();
+
+  const trainers = [
+    {
+      name: "Marko Petrović",
+      specialty: "Strength & Conditioning",
+      quote: "Push your limits, achieve greatness.",
+      image: "https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdGhsZXRpYyUyMG1hbiUyMHdvcmtvdXR8ZW58MXx8fHwxNzczNTk5MjEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    },
+    {
+      name: "Ana Kovačević",
+      specialty: "Group Fitness & HIIT",
+      quote: "Energy, passion, results.",
+      image: "https://images.unsplash.com/photo-1573858129683-59f4d9c445d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwd29tYW4lMjB0cmFpbmluZ3xlbnwxfHx8fDE3NzM1OTkyMTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    },
+    {
+      name: "Emir Hadžić",
+      specialty: "Personal Training",
+      quote: "Your success is my mission.",
+      image: "https://images.unsplash.com/photo-1758875569414-120ebc62ada3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb25hbCUyMHRyYWluZXIlMjBjbGllbnR8ZW58MXx8fHwxNzczNTgzNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    },
+  ];
+
+  return (
+    <section ref={ref} className="py-24 px-4 bg-black relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute top-1/2 right-0 w-96 h-96 bg-[#D4A840]/10 rounded-full blur-3xl" />
+
+      <div className="max-w-7xl mx-auto relative">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2
+            className="text-6xl md:text-7xl font-bold mb-6 text-white"
+            style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+          >
+            Meet Our <span className="neon-text">Trainers</span>
+          </h2>
+          <p
+            className="text-xl text-gray-400 max-w-2xl mx-auto"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
+            Expert coaches dedicated to your fitness goals
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {trainers.map((trainer, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="group"
+            >
+              <div className="relative overflow-hidden rounded-2xl aspect-[3/4] mb-6">
+                <img
+                  src={trainer.image}
+                  alt={trainer.name}
+                  className="media-zoom w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                
+                {/* Quote overlay on hover */}
+                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                  <p
+                    className="text-2xl text-center italic text-white"
+                    style={{ fontFamily: "'Oswald', sans-serif" }}
+                  >
+                    "{trainer.quote}"
+                  </p>
+                </div>
+
+                {/* Neon border on hover */}
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#D4A840] rounded-2xl transition-colors duration-300 pointer-events-none" />
+              </div>
+
+              <div className="text-center">
+                <h3
+                  className="text-2xl font-bold text-white mb-2"
+                  style={{ fontFamily: "'Oswald', sans-serif" }}
+                >
+                  {trainer.name}
+                </h3>
+                <p
+                  className="text-[#D4A840] font-medium"
+                  style={{ fontFamily: "'Inter', sans-serif" }}
+                >
+                  {trainer.specialty}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
