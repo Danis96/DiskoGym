@@ -1,30 +1,27 @@
 import { motion } from "motion/react";
 import { Flame, Music4, TimerReset, Trophy, Users } from "lucide-react";
 import { useInView } from "./hooks/useInView";
+import { client, memberHighlights } from "../content/client";
 
 const trainingFormats = [
   {
     icon: <Flame className="h-7 w-7" />,
-    title: "High-Energy Sessions",
-    description: "Fast-paced classes that keep the room switched on from warm-up to final rep.",
+    title: "High-Energy Atmosphere",
+    description: "Big-room energy and serious intent that help members lock in and work harder.",
   },
   {
     icon: <Users className="h-7 w-7" />,
-    title: "Coach-Led Community",
-    description: "Strong guidance, shared momentum, and a team atmosphere that helps people push harder.",
+    title: "Community Momentum",
+    description: "A training culture built around consistency, shared pace, and showing up strong every day.",
   },
   {
     icon: <Music4 className="h-7 w-7" />,
-    title: "Atmosphere That Hits",
-    description: "Music, tempo, and energy combine to make every session feel powerful and addictive.",
+    title: "Atmosphere That Pushes",
+    description: "Music, movement, and gym energy combine to keep sessions focused and motivating.",
   },
 ];
 
-const classMoments = [
-  { label: "Power Circuit", time: "Mon / Wed / Fri", accent: "06:30 - 07:30" },
-  { label: "Booty & Core", time: "Tue / Thu", accent: "18:00 - 19:00" },
-  { label: "Conditioning Blast", time: "Saturday", accent: "10:00 - 11:00" },
-];
+const classMoments = memberHighlights;
 
 export function GroupTraining() {
   const { ref, inView } = useInView();
@@ -47,7 +44,7 @@ export function GroupTraining() {
             style={{ fontFamily: "'Oswald', sans-serif" }}
           >
             <Trophy className="h-4 w-4" />
-            Group Training Experience
+            XXL Training Experience
           </span>
           <h2
             className="mb-4 text-4xl font-bold text-white sm:mb-6 sm:text-5xl md:text-6xl lg:text-7xl"
@@ -59,7 +56,7 @@ export function GroupTraining() {
             className="mx-auto max-w-3xl text-base text-gray-300 sm:text-lg md:text-xl"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Group training at Disko Gym mixes powerful coaching, club-level energy, and a team vibe that makes people want to come back.
+            {client.businessName} delivers a high-output training environment with enough space, equipment, and energy to keep members engaged and consistent.
           </p>
         </motion.div>
 
@@ -81,29 +78,29 @@ export function GroupTraining() {
                       className="text-[0.7rem] uppercase tracking-[0.25em] sm:text-xs"
                       style={{ fontFamily: "'Oswald', sans-serif" }}
                     >
-                      First class can be free
+                      Sports center highlights
                     </span>
                   </div>
 
                   <h3
                     className="mb-4 max-w-[12ch] text-3xl font-bold leading-none text-white sm:text-4xl lg:text-5xl"
                     style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-                  >
-                    More energy. More results. Zero boring workouts.
+                    >
+                    Bigger space. Better equipment. Stronger daily routine.
                   </h3>
 
                   <p
                     className="max-w-xl text-base leading-7 text-gray-300 sm:text-lg"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
-                    Explosive conditioning, body-shaping classes, and serious motivation in one room. Group training at Disko Gym is built for people who want structure, rhythm, and real atmosphere.
+                    From first-time visitors to regular members, XXL is built for people who want quality equipment, practical convenience, and an atmosphere that feels switched on from the moment they walk in.
                   </p>
                 </div>
 
                 <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-black/40">
                   <img
                     src="https://images.unsplash.com/photo-1518611012118-696072aa579a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200"
-                    alt="Disko Gym group training atmosphere"
+                    alt={`${client.businessName} training atmosphere`}
                     className="h-full min-h-[18rem] w-full object-cover sm:min-h-[22rem] lg:min-h-[25rem]"
                     loading="lazy"
                     decoding="async"
@@ -112,7 +109,7 @@ export function GroupTraining() {
                   <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
                     <div className="inline-flex max-w-full items-center gap-2 rounded-full bg-black/60 px-4 py-2 text-[0.7rem] uppercase tracking-[0.22em] text-[#F4D06B] backdrop-blur-sm sm:text-xs">
                       <Flame className="h-4 w-4" />
-                      Strong vibes only
+                      {client.tagline}
                     </div>
                   </div>
                 </div>
@@ -157,20 +154,20 @@ export function GroupTraining() {
                 className="mb-6 text-2xl font-bold text-white sm:text-3xl"
                 style={{ fontFamily: "'Oswald', sans-serif" }}
               >
-                Popular Class Times
+                Member Highlights
               </h3>
 
               <div className="space-y-4">
                 {classMoments.map((item, index) => (
                   <motion.div
-                    key={item.label}
+                    key={item.title}
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.45, delay: 0.2 + index * 0.08 }}
                     className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition-colors duration-300 hover:border-[#D4A840]/40 hover:bg-[#D4A840]/[0.06] sm:p-5"
                   >
                     <div className="mb-1 text-lg font-bold text-white" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                      {item.label}
+                      {item.title}
                     </div>
                     <div className="text-sm uppercase tracking-[0.2em] text-[#F4D06B]">
                       {item.accent}
@@ -188,26 +185,26 @@ export function GroupTraining() {
                 className="mb-3 text-xs uppercase tracking-[0.28em] text-[#F4D06B]"
                 style={{ fontFamily: "'Oswald', sans-serif" }}
               >
-                New Members Offer
+                Ready To Visit
               </p>
               <h3
                 className="mb-3 text-3xl font-bold text-white sm:text-4xl"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
-                Bring your crew. Start with a free session.
+                See the location. Call the team. Start training.
               </h3>
               <p
                 className="mb-6 text-base leading-7 text-gray-200"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
-                Test the atmosphere, meet the coaches, and feel the pace before committing. This is the easiest way to turn interest into action.
+                XXL Sports Center already has the essentials in place: quality equipment, a strong schedule window, and practical on-site perks. The next step is simply showing up.
               </p>
               <a
                 href="#contact"
                 className="neon-button inline-flex w-full items-center justify-center rounded-lg px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.14em] sm:w-auto sm:text-base"
                 style={{ fontFamily: "'Oswald', sans-serif" }}
               >
-                Reserve Free Group Training
+                View Contact Details
               </a>
             </div>
           </motion.div>

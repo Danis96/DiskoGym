@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { useInView } from "./hooks/useInView";
+import { client, galleryTitles } from "../content/client";
 
 export function Gallery() {
   const { ref, inView } = useInView();
@@ -8,32 +9,32 @@ export function Gallery() {
   const images = [
     {
       url: "https://images.unsplash.com/photo-1554344728-77cf90d9ed26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib2R5YnVpbGRpbmclMjBzdHJlbmd0aCUyMHRyYWluaW5nfGVufDF8fHx8MTc3MzU5OTIwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Strength Training",
+      title: galleryTitles[0],
       aspectRatio: "4 / 5",
     },
     {
       url: "https://images.unsplash.com/photo-1765728617805-b9f22d64e5b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJkaW8lMjBtYWNoaW5lcyUyMGd5bXxlbnwxfHx8fDE3NzM1OTkyMDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Cardio Zone",
+      title: galleryTitles[1],
       aspectRatio: "1 / 1",
     },
     {
       url: "https://images.unsplash.com/photo-1772206605293-3fadeaa944e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncm91cCUyMGZpdG5lc3MlMjBjbGFzc3xlbnwxfHx8fDE3NzM1Mzg5NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Group Training",
+      title: galleryTitles[2],
       aspectRatio: "4 / 5",
     },
     {
       url: "https://images.unsplash.com/photo-1758875569866-62f54fdfd281?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxneW0lMjBhdG1vc3BoZXJlJTIwbW90aXZhdGlvbnxlbnwxfHx8fDE3NzM1OTkyMDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Gym Atmosphere",
+      title: galleryTitles[3],
       aspectRatio: "3 / 4",
     },
     {
       url: "https://images.unsplash.com/photo-1573858129683-59f4d9c445d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwd29tYW4lMjB0cmFpbmluZ3xlbnwxfHx8fDE3NzM1OTkyMTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Personal Training",
+      title: galleryTitles[4],
       aspectRatio: "4 / 5",
     },
     {
       url: "https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdGhsZXRpYyUyMG1hbiUyMHdvcmtvdXR8ZW58MXx8fHwxNzczNTk5MjEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Athletic Training",
+      title: galleryTitles[5],
       aspectRatio: "3 / 4",
     },
   ];
@@ -55,13 +56,13 @@ export function Gallery() {
             className="mb-4 text-4xl font-bold text-white sm:mb-6 sm:text-5xl md:text-6xl lg:text-7xl"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
-            Gym <span className="neon-text">Gallery</span>
+            XXL <span className="neon-text">Gallery</span>
           </h2>
           <p
             className="mx-auto max-w-2xl text-base text-gray-400 sm:text-lg md:text-xl"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Experience the energy and atmosphere of Disko Gym
+            Experience the energy and training atmosphere behind {client.businessName}
           </p>
         </motion.div>
 

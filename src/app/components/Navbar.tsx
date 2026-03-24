@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, Dumbbell } from "lucide-react";
+import { client } from "../content/client";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -59,8 +60,8 @@ export function Navbar() {
               className="text-[2rem] font-bold leading-none sm:text-3xl"
               style={{ fontFamily: "'Bebas Neue', sans-serif" }}
             >
-              <span className="text-white">Disko</span>
-              <span className="neon-text"> Gym</span>
+              <span className="text-white">{client.brandPrimary}</span>
+              <span className="neon-text">{client.brandSecondary}</span>
             </span>
           </a>
 
@@ -77,8 +78,8 @@ export function Navbar() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#D4A840] group-hover:w-full transition-all duration-300" />
               </a>
             ))}
-            <a href="#membership" className="neon-button rounded-lg px-6 py-2 text-sm">
-              Join Now
+            <a href="#contact" className="neon-button rounded-lg px-6 py-2 text-sm">
+              Contact Us
             </a>
           </div>
 
@@ -119,11 +120,11 @@ export function Navbar() {
               ))}
               </div>
               <a
-                href="#membership"
+                href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="neon-button mt-4 block w-full rounded-lg px-6 py-3 text-center"
               >
-                Join Now
+                Contact Us
               </a>
             </div>
           </motion.div>

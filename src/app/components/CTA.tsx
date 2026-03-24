@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { useInView } from "./hooks/useInView";
+import { client } from "../content/client";
 
 export function CTA() {
   const { ref, inView } = useInView();
@@ -31,27 +32,28 @@ export function CTA() {
             className="mb-6 text-4xl font-bold leading-none text-white sm:mb-8 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
-            Your Transformation
+            Train Bigger.
             <br />
-            <span className="neon-text">Starts Today</span>
+            <span className="neon-text">Start At {client.brandPrimary}.</span>
           </h2>
 
           <p
             className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-gray-300 sm:mb-12 sm:text-lg md:text-xl lg:text-2xl"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Start with a free training session at Disko Gym and become the strongest version of yourself
+            Visit {client.businessName}, check the location, and connect with the team to find the right membership or FitPass option.
           </p>
 
-          <motion.button
+          <motion.a
+            href="#contact"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="neon-button rounded-lg px-8 py-4 text-lg font-bold transition-all duration-300 sm:px-12 sm:py-5 sm:text-xl lg:px-16 lg:py-6 lg:text-2xl"
             style={{ fontFamily: "'Oswald', sans-serif" }}
           >
-            Claim Free Training
-          </motion.button>
+            View Contact Info
+          </motion.a>
         </motion.div>
       </div>
     </section>
