@@ -1,9 +1,10 @@
 import { motion, useReducedMotion } from "motion/react";
 import { MapPin, Clock, Dumbbell, Users, Zap } from "lucide-react";
+import { client } from "../content/client";
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion();
-  const headlineLines = ["Train Hard.", "Stay Strong.", "Welcome to Disko Gym."];
+  const headlineLines = ["Train Bigger.", "Push Further.", `Welcome to ${client.businessName}.`];
 
   return (
     <section className="relative min-h-[100svh] w-full overflow-hidden">
@@ -44,7 +45,7 @@ export function Hero() {
                   className="text-[0.7rem] uppercase tracking-[0.28em] sm:text-xs"
                   style={{ fontFamily: "'Oswald', sans-serif" }}
                 >
-                  Free first training for new members
+                  {client.tagline}
                 </span>
               </motion.div>
 
@@ -72,7 +73,7 @@ export function Hero() {
                 className="mx-auto mb-10 max-w-3xl px-2 text-base leading-relaxed text-gray-300 sm:mb-12 sm:text-lg md:text-xl lg:mx-0 lg:px-0 lg:text-2xl"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
-                Start with a free training session and experience a modern fitness center in Sarajevo with professional equipment, serious energy, and coaches who push results.
+                Train at a premium sports center in Sarajevo with TechnoGym equipment, a large workout floor, strong daily energy, and practical extras that make consistency easier.
               </motion.p>
 
               <motion.div
@@ -82,10 +83,10 @@ export function Hero() {
                 className="mb-10 flex flex-col justify-center gap-4 sm:mb-12 sm:flex-row sm:gap-5 lg:justify-start"
               >
                 <a
-                  href="#membership"
+                  href="#contact"
                   className="neon-button rounded-lg px-8 py-4 text-base font-semibold transition-all duration-300 sm:px-10 sm:py-5 sm:text-lg"
                 >
-                  Start Free Training
+                  Contact XXL
                 </a>
                 <a
                   href="#membership"
@@ -104,13 +105,13 @@ export function Hero() {
                 <div className="flex items-center justify-center gap-2 text-center sm:text-left">
                   <MapPin className="h-5 w-5 flex-shrink-0 text-[#D4A840]" />
                   <span className="leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    Dzemala Bijedica 138, Sarajevo
+                    {client.addressLine1}, {client.city}
                   </span>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-center sm:text-left">
                   <Clock className="h-5 w-5 flex-shrink-0 text-[#D4A840]" />
                   <span className="leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    Open daily 09:00 - 24:00
+                    {client.hoursShort}
                   </span>
                 </div>
               </motion.div>
@@ -133,10 +134,10 @@ export function Hero() {
                     <Dumbbell className="h-5 w-5 text-[#D4A840]" />
                     <div>
                       <div className="text-xs uppercase tracking-[0.24em] text-[#F4D06B]" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                        Strength Zone
+                        TechnoGym Zone
                       </div>
                       <div className="text-sm text-white" style={{ fontFamily: "'Inter', sans-serif" }}>
-                        Full power equipment
+                        Premium strength and cardio
                       </div>
                     </div>
                   </motion.div>
@@ -150,10 +151,10 @@ export function Hero() {
                     <Users className="h-5 w-5 text-[#D4A840]" />
                     <div>
                       <div className="text-xs uppercase tracking-[0.24em] text-[#F4D06B]" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                        Group Energy
+                        XXL Energy
                       </div>
                       <div className="text-sm text-white" style={{ fontFamily: "'Inter', sans-serif" }}>
-                        Classes that hit hard
+                        Big-space training atmosphere
                       </div>
                     </div>
                   </motion.div>
@@ -171,7 +172,7 @@ export function Hero() {
                   </div>
                   <img
                     src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200"
-                    alt="Athlete training at Disko Gym"
+                    alt={`Athlete training at ${client.businessName}`}
                     className="h-[28rem] w-full object-cover sm:h-[32rem]"
                     loading="eager"
                     decoding="async"
@@ -180,10 +181,10 @@ export function Hero() {
                   <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
                     <div className="rounded-[1.5rem] border border-white/10 bg-black/60 p-4 backdrop-blur-md">
                       <div className="mb-2 text-xs uppercase tracking-[0.28em] text-[#F4D06B]" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                        Disko Gym Energy
+                        {client.businessName}
                       </div>
                       <div className="text-2xl text-white sm:text-3xl" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
-                        Built for strength, rhythm, and momentum.
+                        Built for size, power, and consistency.
                       </div>
                     </div>
                   </div>

@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Dumbbell, Users, Sparkles } from "lucide-react";
 import { useInView } from "./hooks/useInView";
+import { aboutHighlights, client } from "../content/client";
 
 export function About() {
   const { ref, inView } = useInView();
@@ -8,18 +9,15 @@ export function About() {
   const highlights = [
     {
       icon: <Dumbbell className="w-8 h-8" />,
-      title: "Modern Equipment",
-      description: "State-of-the-art machines and free weights",
+      ...aboutHighlights[0],
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Professional Trainers",
-      description: "Experienced coaches to guide your journey",
+      ...aboutHighlights[1],
     },
     {
       icon: <Sparkles className="w-8 h-8" />,
-      title: "Clean & Comfortable",
-      description: "Premium facilities maintained daily",
+      ...aboutHighlights[2],
     },
   ];
 
@@ -40,7 +38,7 @@ export function About() {
             <div className="relative rounded-2xl overflow-hidden aspect-[4/5] neon-border">
               <img
                 src="https://images.unsplash.com/photo-1554344728-77cf90d9ed26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib2R5YnVpbGRpbmclMjBzdHJlbmd0aCUyMHRyYWluaW5nfGVufDF8fHx8MTc3MzU5OTIwN3ww&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Training at Disko Gym"
+                alt={`Training at ${client.businessName}`}
                 className="w-full h-full object-cover"
                 loading="lazy"
                 decoding="async"
@@ -59,16 +57,16 @@ export function About() {
               className="mb-5 text-4xl font-bold text-white sm:text-5xl md:text-6xl"
               style={{ fontFamily: "'Bebas Neue', sans-serif" }}
             >
-              About <span className="neon-text">Disko Gym</span>
+              About <span className="neon-text">{client.businessName}</span>
             </h2>
             
             <p
               className="mb-8 text-base leading-relaxed text-gray-300 sm:text-lg sm:leading-8 md:mb-10"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Disko Gym offers a modern training environment with professional equipment, 
-              group fitness classes and experienced trainers. Whether you are a beginner or 
-              professional athlete, the gym provides everything needed for effective training.
+              {client.businessName} combines a premium equipment setup, a spacious training environment,
+              and member-friendly extras in one location. It is built for people who want serious workouts,
+              daily flexibility, and a stronger routine in Sarajevo.
             </p>
 
             <div className="space-y-4 sm:space-y-5 md:space-y-6">

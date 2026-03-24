@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Dumbbell, Activity, Users, Wind, UserCheck, Heart } from "lucide-react";
 import { useInView } from "./hooks/useInView";
+import { facilities as clientFacilities } from "../content/client";
 
 export function Facilities() {
   const { ref, inView } = useInView();
@@ -8,32 +9,32 @@ export function Facilities() {
   const facilities = [
     {
       icon: <Dumbbell className="w-10 h-10" />,
-      title: "Strength Training Zone",
+      title: clientFacilities[0],
       image: "https://images.unsplash.com/photo-1554344728-77cf90d9ed26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib2R5YnVpbGRpbmclMjBzdHJlbmd0aCUyMHRyYWluaW5nfGVufDF8fHx8MTc3MzU5OTIwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
     },
     {
       icon: <Activity className="w-10 h-10" />,
-      title: "Cardio Machines",
+      title: clientFacilities[1],
       image: "https://images.unsplash.com/photo-1765728617805-b9f22d64e5b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJkaW8lMjBtYWNoaW5lcyUyMGd5bXxlbnwxfHx8fDE3NzM1OTkyMDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
     },
     {
       icon: <Users className="w-10 h-10" />,
-      title: "Group Fitness Classes",
+      title: clientFacilities[2],
       image: "https://images.unsplash.com/photo-1772206605293-3fadeaa944e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncm91cCUyMGZpdG5lc3MlMjBjbGFzc3xlbnwxfHx8fDE3NzM1Mzg5NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
     },
     {
       icon: <Wind className="w-10 h-10" />,
-      title: "Aerobic Studio",
+      title: clientFacilities[3],
       image: "https://images.unsplash.com/photo-1573858129683-59f4d9c445d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwd29tYW4lMjB0cmFpbmluZ3xlbnwxfHx8fDE3NzM1OTkyMTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
     },
     {
       icon: <UserCheck className="w-10 h-10" />,
-      title: "Personal Training",
+      title: clientFacilities[4],
       image: "https://images.unsplash.com/photo-1758875569414-120ebc62ada3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb25hbCUyMHRyYWluZXIlMjBjbGllbnR8ZW58MXx8fHwxNzczNTgzNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
     },
     {
       icon: <Heart className="w-10 h-10" />,
-      title: "Recovery Area",
+      title: clientFacilities[5],
       image: "https://images.unsplash.com/photo-1758875569866-62f54fdfd281?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxneW0lMjBhdG1vc3BoZXJlJTIwbW90aXZhdGlvbnxlbnwxfHx8fDE3NzM1OTkyMDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
     },
   ];
@@ -60,7 +61,7 @@ export function Facilities() {
             className="mx-auto max-w-2xl text-base text-gray-400 sm:text-lg md:text-xl"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Everything you need for the perfect workout experience
+            Premium zones and practical extras designed for consistent training
           </p>
         </motion.div>
 

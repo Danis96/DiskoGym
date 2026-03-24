@@ -1,49 +1,12 @@
 import { motion } from "motion/react";
 import { Check } from "lucide-react";
 import { useInView } from "./hooks/useInView";
+import { membershipPlans } from "../content/client";
 
 export function Membership() {
   const { ref, inView } = useInView();
 
-  const plans = [
-    {
-      name: "Classic Plan",
-      price: "50",
-      popular: false,
-      features: [
-        "Unlimited gym access",
-        "All cardio machines",
-        "Free weights zone",
-        "Locker access",
-        "Basic trainer consultation",
-      ],
-    },
-    {
-      name: "VIP Plan",
-      price: "65",
-      popular: true,
-      features: [
-        "Unlimited gym access",
-        "All group classes",
-        "Personal trainer consultation",
-        "Nutrition guidance",
-        "Priority locker",
-        "Guest passes (2/month)",
-      ],
-    },
-    {
-      name: "Student Plan",
-      price: "40",
-      popular: false,
-      features: [
-        "Unlimited gym access",
-        "Selected group classes",
-        "Student locker access",
-        "Basic consultation",
-        "Valid student ID required",
-      ],
-    },
-  ];
+  const plans = membershipPlans;
 
   return (
     <section ref={ref} className="relative overflow-hidden bg-black px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
@@ -67,7 +30,7 @@ export function Membership() {
             className="mx-auto max-w-2xl text-base text-gray-400 sm:text-lg md:text-xl"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Choose the perfect plan for your fitness journey
+            Membership and visit options based on publicly listed offers
           </p>
         </motion.div>
 
@@ -112,7 +75,7 @@ export function Membership() {
                   >
                     {plan.price}
                   </span>
-                  <span className="text-lg text-gray-400 sm:text-xl">KM/month</span>
+                  <span className="text-lg text-gray-400 sm:text-xl">{plan.suffix}</span>
                 </div>
               </div>
 
@@ -132,15 +95,16 @@ export function Membership() {
                 ))}
               </ul>
 
-              <button
+              <a
+                href="#contact"
                 className={`w-full py-4 rounded-lg font-semibold transition-all duration-300 ${
                   plan.popular
                     ? "neon-button"
                     : "glass-button hover:border-[#D4A840]"
                 }`}
               >
-                Start Training Today
-              </button>
+                Ask About This Option
+              </a>
             </motion.div>
           ))}
         </div>

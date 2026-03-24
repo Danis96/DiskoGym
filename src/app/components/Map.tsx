@@ -1,10 +1,7 @@
 import { motion } from "motion/react";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { useInView } from "./hooks/useInView";
-
-const googleMapsUrl =
-  "https://www.google.com/maps/place/Fitness+Centar+Disko+Gym/@43.8508723,18.3604341,806m/data=!3m1!1e3!4m6!3m5!1s0x4758c9a8c9da963d:0x684a6c97e78b5b6e!8m2!3d43.8508723!4d18.363009!16s%2Fg%2F11fhvn3ttk?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D";
-const fitpassUrl = "https://fitpass.ba/en/objects/fitness-centar-diskogym";
+import { client } from "../content/client";
 
 export function Map() {
   const { ref, inView } = useInView();
@@ -44,14 +41,14 @@ export function Map() {
             className="glass-card aspect-[4/3] overflow-hidden rounded-2xl sm:aspect-video"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2876.4474799999997!2d18.3654!3d43.8564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDUxJzIzLjAiTiAxOMKwMjEnNTUuNCJF!5e0!3m2!1sen!2sba!4v1234567890"
+              src={client.mapEmbedUrl}
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Disko Gym Location"
+              title={`${client.businessName} location`}
             />
           </motion.div>
 
@@ -75,15 +72,15 @@ export function Map() {
                     Address
                   </h3>
                   <a
-                    href={googleMapsUrl}
+                    href={client.googleMapsUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="text-base text-gray-300 sm:text-lg"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
-                    Džemala Bijedića 138
+                    {client.addressLine1}
                     <br />
-                    Sarajevo, Bosnia and Herzegovina
+                    {client.addressLine2}
                   </a>
                 </div>
               </div>
@@ -105,9 +102,9 @@ export function Map() {
                     className="text-base text-gray-300 sm:text-lg"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
-                    +387 33 123 456
+                    {client.phoneDisplay}
                     <br />
-                    info@diskogym.ba
+                    Facebook: {client.facebookHandle}
                   </p>
                 </div>
               </div>
@@ -129,9 +126,9 @@ export function Map() {
                     className="text-base text-gray-300 sm:text-lg"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
-                    Monday - Sunday
+                    {client.hoursDays}
                     <br />
-                    09:00 - 24:00
+                    {client.hoursTime}
                   </p>
                 </div>
               </div>
@@ -139,7 +136,7 @@ export function Map() {
 
             <div className="flex flex-col gap-3 sm:flex-row">
               <a
-                href={googleMapsUrl}
+                href={client.googleMapsUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="neon-button rounded-lg px-6 py-4 text-center text-sm font-semibold sm:text-base"
@@ -148,7 +145,7 @@ export function Map() {
                 Open in Google Maps
               </a>
               <a
-                href={fitpassUrl}
+                href={client.fitpassUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="glass-button rounded-lg px-6 py-4 text-center text-sm font-semibold sm:text-base"

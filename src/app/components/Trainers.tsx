@@ -1,26 +1,21 @@
 import { motion } from "motion/react";
 import { useInView } from "./hooks/useInView";
+import { spotlightCards } from "../content/client";
 
 export function Trainers() {
   const { ref, inView } = useInView();
 
   const trainers = [
     {
-      name: "Marko Petrović",
-      specialty: "Strength & Conditioning",
-      quote: "Push your limits, achieve greatness.",
+      ...spotlightCards[0],
       image: "https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdGhsZXRpYyUyMG1hbiUyMHdvcmtvdXR8ZW58MXx8fHwxNzczNTk5MjEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
     },
     {
-      name: "Ana Kovačević",
-      specialty: "Group Fitness & HIIT",
-      quote: "Energy, passion, results.",
+      ...spotlightCards[1],
       image: "https://images.unsplash.com/photo-1573858129683-59f4d9c445d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwd29tYW4lMjB0cmFpbmluZ3xlbnwxfHx8fDE3NzM1OTkyMTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
     },
     {
-      name: "Emir Hadžić",
-      specialty: "Personal Training",
-      quote: "Your success is my mission.",
+      ...spotlightCards[2],
       image: "https://images.unsplash.com/photo-1758875569414-120ebc62ada3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb25hbCUyMHRyYWluZXIlMjBjbGllbnR8ZW58MXx8fHwxNzczNTgzNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
     },
   ];
@@ -41,13 +36,13 @@ export function Trainers() {
             className="mb-4 text-4xl font-bold text-white sm:mb-6 sm:text-5xl md:text-6xl lg:text-7xl"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
-            Meet Our <span className="neon-text">Trainers</span>
+            Why Members Choose <span className="neon-text">XXL</span>
           </h2>
           <p
             className="mx-auto max-w-2xl text-base text-gray-400 sm:text-lg md:text-xl"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Expert coaches dedicated to your fitness goals
+            The essentials that make this sports center easier to return to consistently
           </p>
         </motion.div>
 
