@@ -1,6 +1,6 @@
-# XXL Sports Center
+# Flex Gym
 
-Marketing landing page for XXL Sports Center built with React, Vite, Tailwind CSS v4, and Motion.
+Marketing landing page for Flex Gym built with React, Vite, Tailwind CSS v4, and Motion.
 
 ## Overview
 
@@ -179,7 +179,7 @@ Then deploy the contents of `dist/`.
 ## Known Improvement Areas
 
 - replace remote images with compressed local assets
-- replace remote placeholder imagery with real XXL Sports Center media
+- replace remote placeholder imagery with real Flex Gym media
 - connect CTA buttons to a real form, checkout, or lead funnel
 - review Google Maps embed details against the real business location
 - add automated linting and test scripts if this project will keep evolving
