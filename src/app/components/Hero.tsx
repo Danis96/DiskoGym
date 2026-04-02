@@ -1,17 +1,18 @@
 import { motion, useReducedMotion } from "motion/react";
 import { MapPin, Clock, Dumbbell, Users, Zap } from "lucide-react";
-import { client } from "../content/client";
+import { getSiteContent } from "../content/client";
+import { useLanguage } from "../LanguageProvider";
 
 export function Hero() {
+  const { language } = useLanguage();
+  const { client, hero } = getSiteContent(language);
   const shouldReduceMotion = useReducedMotion();
-  const headlineLines = ["Train Bigger.", "Push Further.", `Welcome to ${client.businessName}.`];
 
   return (
     <section className="relative min-h-[100svh] w-full overflow-hidden">
-      {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1734630341082-0fec0e10126c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwZ3lmJTIwd29ya291dCUyMGludGVuc2V8ZW58MXx8fHwxNzczNDc5NzE0fDA&ixlib=rb-4.1.0&q=80&w=1600"
+          src="https://images.unsplash.com/photo-1734630341082-0fec0e10126c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwZ3ltJTIwd29ya291dCUyMGludGVuc2V8ZW58MXx8fHwxNzczNDc5NzE0fDA&ixlib=rb-4.1.0&q=80&w=1600"
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
           fetchPriority="high"
@@ -21,16 +22,14 @@ export function Hero() {
         <div className="hero-grid absolute inset-0 opacity-40" />
         <div className="hero-beam hero-beam-left absolute -left-[10%] top-[12%] h-72 w-56 rounded-full" />
         <div className="hero-beam hero-beam-right absolute right-[-8%] top-[18%] h-80 w-64 rounded-full" />
-        <div className="hero-power-ring absolute left-[8%] top-[16%] h-44 w-44 rounded-full border border-[#D4A840]/20 sm:h-56 sm:w-56" />
-        <div className="hero-power-ring hero-power-ring-delayed absolute bottom-[16%] right-[10%] h-52 w-52 rounded-full border border-[#D4A840]/15 sm:h-72 sm:w-72" />
+        <div className="hero-power-ring absolute left-[8%] top-[16%] h-44 w-44 rounded-full border border-[#FF5A36]/20 sm:h-56 sm:w-56" />
+        <div className="hero-power-ring hero-power-ring-delayed absolute bottom-[16%] right-[10%] h-52 w-52 rounded-full border border-[#FF5A36]/15 sm:h-72 sm:w-72" />
         <div className="hero-strike absolute left-0 right-0 top-[48%] h-px" />
-
-        <div className="ambient-glow absolute left-[12%] top-[10%] h-72 w-72 rounded-full bg-[#D4A840]/16" />
-        <div className="ambient-glow absolute bottom-[8%] right-[12%] h-80 w-80 rounded-full bg-[#D4A840]/10" />
+        <div className="ambient-glow absolute left-[12%] top-[10%] h-72 w-72 rounded-full bg-[#FF5A36]/16" />
+        <div className="ambient-glow absolute bottom-[8%] right-[12%] h-80 w-80 rounded-full bg-[#FF5A36]/10" />
       </div>
 
-      {/* Content */}
-      <div className="relative h-full flex items-center justify-center px-4">
+      <div className="relative flex h-full items-center justify-center px-4">
         <div className="mx-auto max-w-6xl pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-24 lg:pb-16">
           <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(280px,22rem)] lg:gap-12">
             <div className="text-center lg:text-left">
@@ -38,14 +37,11 @@ export function Hero() {
                 initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="mb-5 inline-flex items-center gap-3 rounded-full border border-[#D4A840]/25 bg-black/30 px-4 py-2 text-[#F4D06B] backdrop-blur-md"
+                className="mb-5 inline-flex items-center gap-3 rounded-full border border-[#FF5A36]/25 bg-black/30 px-4 py-2 text-[#FF8A5B] backdrop-blur-md"
               >
                 <Zap className="h-4 w-4" />
-                <span
-                  className="text-[0.7rem] uppercase tracking-[0.28em] sm:text-xs"
-                  style={{ fontFamily: "'Oswald', sans-serif" }}
-                >
-                  {client.tagline}
+                <span className="text-[0.7rem] uppercase tracking-[0.28em] sm:text-xs" style={{ fontFamily: "'Oswald', sans-serif" }}>
+                  {hero.badge}
                 </span>
               </motion.div>
 
@@ -53,7 +49,7 @@ export function Hero() {
                 className="mb-5 text-5xl font-bold tracking-tight sm:mb-6 sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
-                {headlineLines.map((line, index) => (
+                {hero.headlineLines.map((line, index) => (
                   <motion.span
                     key={line}
                     initial={shouldReduceMotion ? false : { opacity: 0, y: 46, skewY: 6 }}
@@ -73,7 +69,7 @@ export function Hero() {
                 className="mx-auto mb-10 max-w-3xl px-2 text-base leading-relaxed text-gray-300 sm:mb-12 sm:text-lg md:text-xl lg:mx-0 lg:px-0 lg:text-2xl"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
-                Train at a premium sports center in Sarajevo with TechnoGym equipment, a large workout floor, strong daily energy, and practical extras that make consistency easier.
+                {hero.description}
               </motion.p>
 
               <motion.div
@@ -83,16 +79,18 @@ export function Hero() {
                 className="mb-10 flex flex-col justify-center gap-4 sm:mb-12 sm:flex-row sm:gap-5 lg:justify-start"
               >
                 <a
-                  href="#contact"
+                  href={client.googleMapsUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   className="neon-button rounded-lg px-8 py-4 text-base font-semibold transition-all duration-300 sm:px-10 sm:py-5 sm:text-lg"
                 >
-                  Contact XXL
+                  {hero.primaryCta}
                 </a>
                 <a
                   href="#membership"
                   className="glass-button rounded-lg px-8 py-4 text-base font-semibold transition-all duration-300 sm:px-10 sm:py-5 sm:text-lg"
                 >
-                  View Membership
+                  {hero.secondaryCta}
                 </a>
               </motion.div>
 
@@ -103,13 +101,13 @@ export function Hero() {
                 className="flex flex-col items-center justify-center gap-4 text-sm text-gray-300 sm:flex-row sm:flex-wrap sm:gap-6 sm:text-base md:gap-8 lg:justify-start"
               >
                 <div className="flex items-center justify-center gap-2 text-center sm:text-left">
-                  <MapPin className="h-5 w-5 flex-shrink-0 text-[#D4A840]" />
+                  <MapPin className="h-5 w-5 flex-shrink-0 text-[#FF5A36]" />
                   <span className="leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    {client.addressLine1}, {client.city}
+                    {client.addressLine2}
                   </span>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-center sm:text-left">
-                  <Clock className="h-5 w-5 flex-shrink-0 text-[#D4A840]" />
+                  <Clock className="h-5 w-5 flex-shrink-0 text-[#FF5A36]" />
                   <span className="leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
                     {client.hoursShort}
                   </span>
@@ -129,15 +127,15 @@ export function Hero() {
                     initial={shouldReduceMotion ? false : { opacity: 0, y: 18, x: -12 }}
                     animate={{ opacity: 1, y: 0, x: 0 }}
                     transition={{ duration: 0.55, delay: 0.48 }}
-                    className="hero-stat-chip hero-stat-chip-top flex items-center gap-3 rounded-2xl border border-[#D4A840]/25 bg-black/80 px-4 py-3 shadow-[0_0_30px_rgba(212,168,64,0.14)] lg:absolute lg:right-[-4%] lg:top-[-5%]"
+                    className="hero-stat-chip hero-stat-chip-top flex items-center gap-3 rounded-2xl border border-[#FF5A36]/25 bg-black/80 px-4 py-3 shadow-[0_0_30px_rgba(255,90,54,0.14)] lg:absolute lg:right-[-4%] lg:top-[-5%]"
                   >
-                    <Dumbbell className="h-5 w-5 text-[#D4A840]" />
+                    <Dumbbell className="h-5 w-5 text-[#FF5A36]" />
                     <div>
-                      <div className="text-xs uppercase tracking-[0.24em] text-[#F4D06B]" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                        TechnoGym Zone
+                      <div className="text-xs uppercase tracking-[0.24em] text-[#FF8A5B]" style={{ fontFamily: "'Oswald', sans-serif" }}>
+                        {hero.statTopTitle}
                       </div>
                       <div className="text-sm text-white" style={{ fontFamily: "'Inter', sans-serif" }}>
-                        Premium strength and cardio
+                        {hero.statTopBody}
                       </div>
                     </div>
                   </motion.div>
@@ -146,22 +144,22 @@ export function Hero() {
                     initial={shouldReduceMotion ? false : { opacity: 0, y: 18, x: 12 }}
                     animate={{ opacity: 1, y: 0, x: 0 }}
                     transition={{ duration: 0.55, delay: 0.58 }}
-                    className="hero-stat-chip hero-stat-chip-bottom flex items-center gap-3 rounded-2xl border border-[#D4A840]/25 bg-black/80 px-4 py-3 shadow-[0_0_30px_rgba(212,168,64,0.14)] lg:absolute lg:left-[-4%] lg:top-[54%]"
+                    className="hero-stat-chip hero-stat-chip-bottom flex items-center gap-3 rounded-2xl border border-[#FF5A36]/25 bg-black/80 px-4 py-3 shadow-[0_0_30px_rgba(255,90,54,0.14)] lg:absolute lg:left-[-4%] lg:top-[54%]"
                   >
-                    <Users className="h-5 w-5 text-[#D4A840]" />
+                    <Users className="h-5 w-5 text-[#FF5A36]" />
                     <div>
-                      <div className="text-xs uppercase tracking-[0.24em] text-[#F4D06B]" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                        XXL Energy
+                      <div className="text-xs uppercase tracking-[0.24em] text-[#FF8A5B]" style={{ fontFamily: "'Oswald', sans-serif" }}>
+                        {hero.statBottomTitle}
                       </div>
                       <div className="text-sm text-white" style={{ fontFamily: "'Inter', sans-serif" }}>
-                        Big-space training atmosphere
+                        {hero.statBottomBody}
                       </div>
                     </div>
                   </motion.div>
                 </div>
 
-                <div className="relative overflow-hidden rounded-[1.75rem] border border-[#D4A840]/20 bg-[#111]">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,168,64,0.24),transparent_38%)]" />
+                <div className="relative overflow-hidden rounded-[1.75rem] border border-[#FF5A36]/20 bg-[#111]">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,90,54,0.24),transparent_38%)]" />
                   <div className="hero-lift-track absolute left-1/2 top-6 z-10 h-[72%] w-px -translate-x-1/2" />
                   <div className="hero-barbell absolute left-1/2 top-14 z-20 flex -translate-x-1/2 items-center justify-center">
                     <div className="hero-plate hero-plate-outer" />
@@ -180,11 +178,11 @@ export function Hero() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
                     <div className="rounded-[1.5rem] border border-white/10 bg-black/60 p-4 backdrop-blur-md">
-                      <div className="mb-2 text-xs uppercase tracking-[0.28em] text-[#F4D06B]" style={{ fontFamily: "'Oswald', sans-serif" }}>
+                      <div className="mb-2 text-xs uppercase tracking-[0.28em] text-[#FF8A5B]" style={{ fontFamily: "'Oswald', sans-serif" }}>
                         {client.businessName}
                       </div>
                       <div className="text-2xl text-white sm:text-3xl" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
-                        Built for size, power, and consistency.
+                        {hero.imageCaption}
                       </div>
                     </div>
                   </div>
@@ -195,18 +193,17 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
         className="absolute bottom-5 left-1/2 hidden -translate-x-1/2 sm:block"
       >
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
+        <div className="flex h-10 w-6 justify-center rounded-full border-2 border-white/30 p-1">
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1 h-3 bg-[#D4A840] rounded-full"
+            className="h-3 w-1 rounded-full bg-[#FF5A36]"
           />
         </div>
       </motion.div>
