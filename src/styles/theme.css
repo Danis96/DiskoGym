@@ -185,52 +185,52 @@
   }
 }
 
-/* XXL Sports Center Custom Styles */
+/* Flex Gym Custom Styles */
 
-/* Neon Text Effect - Updated to Golden Yellow */
+/* Neon Text Effect */
 .neon-text {
   color: #fff;
   text-shadow: 
-    0 0 10px rgba(212, 168, 64, 0.85),
-    0 0 24px rgba(212, 168, 64, 0.55),
-    0 0 42px rgba(212, 168, 64, 0.28);
+    0 0 10px rgba(255, 90, 54, 0.85),
+    0 0 24px rgba(255, 90, 54, 0.55),
+    0 0 42px rgba(255, 90, 54, 0.28);
   animation: neonFlicker 7s ease-in-out infinite;
 }
 
 @keyframes neonFlicker {
   0%, 100% {
     text-shadow: 
-      0 0 10px rgba(212, 168, 64, 0.85),
-      0 0 24px rgba(212, 168, 64, 0.55),
-      0 0 42px rgba(212, 168, 64, 0.28);
+      0 0 10px rgba(255, 90, 54, 0.85),
+      0 0 24px rgba(255, 90, 54, 0.55),
+      0 0 42px rgba(255, 90, 54, 0.28);
     opacity: 1;
   }
   50% {
     text-shadow: 
-      0 0 8px rgba(212, 168, 64, 0.78),
-      0 0 18px rgba(212, 168, 64, 0.44),
-      0 0 32px rgba(212, 168, 64, 0.22);
+      0 0 8px rgba(255, 90, 54, 0.78),
+      0 0 18px rgba(255, 90, 54, 0.44),
+      0 0 32px rgba(255, 90, 54, 0.22);
     opacity: 0.98;
   }
   25%, 75% {
     text-shadow: 
-      0 0 9px rgba(212, 168, 64, 0.82),
-      0 0 22px rgba(212, 168, 64, 0.5),
-      0 0 38px rgba(212, 168, 64, 0.24);
+      0 0 9px rgba(255, 90, 54, 0.82),
+      0 0 22px rgba(255, 90, 54, 0.5),
+      0 0 38px rgba(255, 90, 54, 0.24);
     opacity: 0.99;
   }
 }
 
-/* Neon Button - Updated to Golden Yellow */
+/* Neon Button */
 .neon-button {
-  background: linear-gradient(135deg, #D4A840 0%, #B8922E 100%);
-  color: #000;
+  background: linear-gradient(135deg, #FF5A36 0%, #FF8A5B 100%);
+  color: #fff;
   font-weight: 700;
-  border: 2px solid #D4A840;
+  border: 2px solid #FF5A36;
   box-shadow: 
-    0 0 10px rgba(212, 168, 64, 0.4),
-    0 0 22px rgba(212, 168, 64, 0.22),
-    inset 0 0 10px rgba(212, 168, 64, 0.5);
+    0 0 10px rgba(255, 90, 54, 0.4),
+    0 0 22px rgba(255, 90, 54, 0.22),
+    inset 0 0 10px rgba(255, 90, 54, 0.5);
   position: relative;
   overflow: hidden;
   will-change: transform;
@@ -253,9 +253,9 @@
 
 .neon-button:hover {
   box-shadow: 
-    0 0 14px rgba(212, 168, 64, 0.55),
-    0 0 30px rgba(212, 168, 64, 0.28),
-    inset 0 0 20px rgba(212, 168, 64, 0.8);
+    0 0 14px rgba(255, 90, 54, 0.55),
+    0 0 30px rgba(255, 90, 54, 0.28),
+    inset 0 0 20px rgba(255, 90, 54, 0.8);
   transform: translateY(-2px);
 }
 
@@ -268,7 +268,7 @@
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-/* Glass Button - Updated to Golden Yellow Accent */
+/* Glass Button */
 .glass-button {
   background: rgba(255, 255, 255, 0.05);
   -webkit-backdrop-filter: blur(10px);
@@ -281,19 +281,19 @@
 
 .glass-button:hover {
   background: rgba(255, 255, 255, 0.1);
-  border-color: #D4A840;
+  border-color: #FF5A36;
   box-shadow: 
-    0 0 20px rgba(212, 168, 64, 0.5),
+    0 0 20px rgba(255, 90, 54, 0.5),
     0 8px 32px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* Neon Border - Updated to Golden Yellow */
+/* Neon Border */
 .neon-border {
   border: 2px solid transparent;
   box-shadow: 
-    0 0 10px rgba(212, 168, 64, 0.32),
-    0 0 18px rgba(212, 168, 64, 0.18),
-    inset 0 0 10px rgba(212, 168, 64, 0.3);
+    0 0 10px rgba(255, 90, 54, 0.32),
+    0 0 18px rgba(255, 90, 54, 0.18),
+    inset 0 0 10px rgba(255, 90, 54, 0.3);
 }
 
 .ambient-glow {
@@ -303,14 +303,14 @@
 
 .hero-grid {
   background-image:
-    linear-gradient(rgba(212, 168, 64, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212, 168, 64, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(255, 90, 54, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 90, 54, 0.08) 1px, transparent 1px);
   background-size: 4.75rem 4.75rem;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), transparent 85%);
 }
 
 .hero-beam {
-  background: radial-gradient(circle, rgba(212, 168, 64, 0.22) 0%, rgba(212, 168, 64, 0.08) 35%, transparent 72%);
+  background: radial-gradient(circle, rgba(255, 90, 54, 0.22) 0%, rgba(255, 90, 54, 0.08) 35%, transparent 72%);
   filter: blur(20px);
   opacity: 0.9;
   animation: heroBeamDrift 10s ease-in-out infinite;
@@ -322,9 +322,9 @@
 
 .hero-power-ring {
   box-shadow:
-    0 0 0 1px rgba(212, 168, 64, 0.05),
-    0 0 36px rgba(212, 168, 64, 0.12),
-    inset 0 0 32px rgba(212, 168, 64, 0.08);
+    0 0 0 1px rgba(255, 90, 54, 0.05),
+    0 0 36px rgba(255, 90, 54, 0.12),
+    inset 0 0 32px rgba(255, 90, 54, 0.08);
   animation: heroRingPulse 5.5s ease-in-out infinite;
 }
 
@@ -333,21 +333,21 @@
 }
 
 .hero-strike {
-  background: linear-gradient(90deg, transparent, rgba(212, 168, 64, 0.7), transparent);
-  box-shadow: 0 0 16px rgba(212, 168, 64, 0.35);
+  background: linear-gradient(90deg, transparent, rgba(255, 90, 54, 0.7), transparent);
+  box-shadow: 0 0 16px rgba(255, 90, 54, 0.35);
   animation: heroStrikeSweep 7s ease-in-out infinite;
   opacity: 0.6;
 }
 
 .hero-stat-stack {
   box-shadow:
-    0 0 0 1px rgba(212, 168, 64, 0.06),
+    0 0 0 1px rgba(255, 90, 54, 0.06),
     0 25px 80px rgba(0, 0, 0, 0.5);
 }
 
 .hero-lift-track {
-  background: linear-gradient(180deg, rgba(212, 168, 64, 0.35), rgba(212, 168, 64, 0.04) 80%, transparent);
-  box-shadow: 0 0 18px rgba(212, 168, 64, 0.18);
+  background: linear-gradient(180deg, rgba(255, 90, 54, 0.35), rgba(255, 90, 54, 0.04) 80%, transparent);
+  box-shadow: 0 0 18px rgba(255, 90, 54, 0.18);
   opacity: 0.75;
 }
 
@@ -592,10 +592,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #D4A840 0%, #B8922E 100%);
+  background: linear-gradient(180deg, #FF5A36 0%, #FF8A5B 100%);
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #B8922E 0%, #9A7A25 100%);
+  background: linear-gradient(180deg, #FF8A5B 0%, #D94728 100%);
 }
